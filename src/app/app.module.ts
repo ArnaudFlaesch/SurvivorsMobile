@@ -1,28 +1,43 @@
-import {NgModule, ErrorHandler} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {SurvivorsApplication} from './app.component';
+import {NgModule, ErrorHandler} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {IonicApp, IonicModule, IonicErrorHandler} from "ionic-angular";
+import {SurvivorsApplication} from "./app.component";
 
-import {HomePage} from '../pages/home/home';
+import {HomePage} from "../pages/home/home";
 
-import {StatusBar} from '@ionic-native/status-bar';
-import {SplashScreen} from '@ionic-native/splash-screen';
+import {StatusBar} from "@ionic-native/status-bar";
+import {SplashScreen} from "@ionic-native/splash-screen";
+import {RegistrationPage} from "../pages/registration/registration";
+import {LoginPage} from "../pages/login/login";
+import {AuthService} from "../services/AuthService";
+import {HTTP} from "@ionic-native/http";
+import {IonicStorageModule} from "@ionic/storage";
+import {LogoutPage} from "../pages/logout/logout";
 
 @NgModule({
   declarations: [
     SurvivorsApplication,
+    LoginPage,
+    LogoutPage,
+    RegistrationPage,
     HomePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(SurvivorsApplication)
+    IonicModule.forRoot(SurvivorsApplication),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     SurvivorsApplication,
-    HomePage,
+    LoginPage,
+    LogoutPage,
+    RegistrationPage,
+    HomePage
   ],
   providers: [
+    AuthService,
+    HTTP,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

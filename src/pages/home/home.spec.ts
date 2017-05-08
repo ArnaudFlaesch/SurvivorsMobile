@@ -1,14 +1,13 @@
-import {TestBed, ComponentFixture, async } from '@angular/core/testing';
-import {IonicModule, NavController} from 'ionic-angular';
-import {SurvivorsApplication} from '../../app/app.component';
-import {HomePage} from './home';
+import {TestBed, ComponentFixture, async } from "@angular/core/testing";
+import {IonicModule, NavController} from "ionic-angular";
+import {SurvivorsApplication} from "../../app/app.component";
+import {HomePage} from "./home";
 
 let comp: HomePage;
 let fixture: ComponentFixture<HomePage>;
 let el: HTMLElement;
 
-describe('Home page tests', () => {
-
+describe("Home page tests", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SurvivorsApplication, HomePage],
@@ -32,20 +31,20 @@ describe('Home page tests', () => {
     el = null;
   });
 
-  it('is created', () => {
+  it("is created", () => {
     expect(fixture).toBeTruthy();
     expect(comp).toBeTruthy();
   });
 
-  it('initialises title', () => {
-    expect(comp['title']).toEqual("Survivors - Page d'accueil");
+  it("initialises title", () => {
+    expect(comp["title"]).toEqual("Survivors - Page d'accueil");
   });
 
-  it('can set the title to a supplied value', () => {
+  it("can set the title to a supplied value", () => {
     el = fixture.debugElement.nativeElement.querySelector("ion-title");
-    comp.title = 'Welcome to Ionic!';
+    comp.title = "Welcome to Ionic!";
     fixture.detectChanges();
-    expect(comp['title']).toEqual('Welcome to Ionic!');
-    expect(el.textContent).toContain('Welcome to Ionic!');
+    expect(comp["title"]).toEqual("Welcome to Ionic!");
+    expect(el.textContent).toContain("Welcome to Ionic!");
   });
 });

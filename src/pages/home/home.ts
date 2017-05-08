@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { NavController } from "ionic-angular";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
 
-  title: string = "";
+  private _title: string = "";
 
   constructor(public navCtrl: NavController) {
-    this.title = "Survivors - Page d'accueil";
+    this._title = "Survivors - Page d'accueil";
   }
 
+  get title(): string {
+    return this._title;
+  }
+
+  set title(value: string) {
+    this._title = value;
+  }
 }

@@ -1,28 +1,31 @@
-import {Component, ViewChild} from '@angular/core';
-import {Nav, Platform} from 'ionic-angular';
-import {StatusBar} from '@ionic-native/status-bar';
-import {SplashScreen} from '@ionic-native/splash-screen';
+import {Component, ViewChild} from "@angular/core";
+import {Nav, Platform} from "ionic-angular";
+import {StatusBar} from "@ionic-native/status-bar";
+import {SplashScreen} from "@ionic-native/splash-screen";
 
 import {HomePage} from "../pages/home/home";
+import {LoginPage} from "../pages/login/login";
+import {LogoutPage} from "../pages/logout/logout";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
 export class SurvivorsApplication {
-  @ViewChild(Nav) nav: Nav;
-  rootPage: any = HomePage;
-  pages: Array<{title: string, component: any}>;
+
+  @ViewChild(Nav) protected nav: Nav;
+  protected rootPage: any = LoginPage;
+  protected pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Personnage', component: HomePage }
+      { title: "Personnage", component: HomePage },
+      { title: "Déconnexion", component: LogoutPage }
     ];
   }
 
-
-  initializeApp() {
+  private initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -31,7 +34,7 @@ export class SurvivorsApplication {
     });
   }
 
-  openPage(page) {
+  public openPage(page) {
     this.nav.setRoot(page.component);
   }
 }
