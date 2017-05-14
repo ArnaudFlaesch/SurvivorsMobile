@@ -7,17 +7,9 @@ import { NavController } from "ionic-angular";
 })
 export class HomePage {
 
-  private _title: string = "";
+  private title: String;
 
   constructor(public navCtrl: NavController) {
-    this._title = "Survivors - Page d'accueil";
-  }
-
-  get title(): string {
-    return this._title;
-  }
-
-  set title(value: string) {
-    this._title = value;
+    this.title = "Survivors - Page d'accueil";
   }
 }

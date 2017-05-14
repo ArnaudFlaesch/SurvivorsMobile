@@ -13,12 +13,16 @@ import {AuthService} from "../services/AuthService";
 import {HTTP} from "@ionic-native/http";
 import {IonicStorageModule} from "@ionic/storage";
 import {LogoutPage} from "../pages/logout/logout";
+import {GoogleMaps} from "@ionic-native/google-maps";
+import {Geolocation} from "@ionic-native/geolocation";
+import {MapPage} from "../pages/map/map";
 
 @NgModule({
   declarations: [
     SurvivorsApplication,
     LoginPage,
     LogoutPage,
+    MapPage,
     RegistrationPage,
     HomePage
   ],
@@ -37,6 +41,8 @@ import {LogoutPage} from "../pages/logout/logout";
   ],
   providers: [
     AuthService,
+    Geolocation,
+    GoogleMaps,
     HTTP,
     StatusBar,
     SplashScreen,

@@ -7,8 +7,6 @@ export class User {
   private _nickname: string;
   private _password: string;
 
-  constructor() {}
-
   get email(): string {
     return this._email;
   }

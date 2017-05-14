@@ -55,7 +55,7 @@ export class LoginPage {
 
   private showLoading() {
     this.loading = this.loadingCtrl.create({
-      content: "Please wait..."
+      content: "Patientez..."
     });
     this.loading.present();
   }
