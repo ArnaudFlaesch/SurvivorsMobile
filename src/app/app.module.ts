@@ -13,13 +13,18 @@ import {AuthService} from "../services/AuthService";
 import {HTTP} from "@ionic-native/http";
 import {IonicStorageModule} from "@ionic/storage";
 import {LogoutPage} from "../pages/logout/logout";
+import {Camera} from "@ionic-native/camera";
 import {GoogleMaps} from "@ionic-native/google-maps";
 import {Geolocation} from "@ionic-native/geolocation";
 import {MapPage} from "../pages/map/map";
+import {CameraPage} from "../pages/camera/camera";
+import {CameraPreview} from "@ionic-native/camera-preview";
+import {Diagnostic} from "@ionic-native/diagnostic";
 
 @NgModule({
   declarations: [
     SurvivorsApplication,
+    CameraPage,
     LoginPage,
     LogoutPage,
     MapPage,
@@ -34,13 +39,17 @@ import {MapPage} from "../pages/map/map";
   bootstrap: [IonicApp],
   entryComponents: [
     SurvivorsApplication,
+    CameraPage,
     LoginPage,
     LogoutPage,
+    MapPage,
     RegistrationPage,
     HomePage
   ],
   providers: [
     AuthService,
+    CameraPreview,
+    Diagnostic,
     Geolocation,
     GoogleMaps,
     HTTP,

@@ -7,6 +7,7 @@ import {HomePage} from "../pages/home/home";
 import {LoginPage} from "../pages/login/login";
 import {LogoutPage} from "../pages/logout/logout";
 import {MapPage} from "../pages/map/map";
+import {CameraPage} from "../pages/camera/camera";
 
 @Component({
   templateUrl: "app.html"
@@ -22,6 +23,7 @@ export class SurvivorsApplication {
     this.pages = [
       { title: "Personnage", component: HomePage },
       { title: "Carte", component: MapPage },
+      { title: "RA", component: CameraPage },
       { title: "Déconnexion", component: LogoutPage }
     ];
   }
@@ -36,6 +38,12 @@ export class SurvivorsApplication {
   }
 
   public openPage(page) {
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component)
+      .then(openedPage => {
+        console.log("Open page " + openedPage + " " + page.title);
+      })
+      .catch(error => {
+        console.log("Error " + error.message);
+      });
   }
 }

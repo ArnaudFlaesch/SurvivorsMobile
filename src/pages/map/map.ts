@@ -14,7 +14,7 @@ export class MapPage {
   protected map: any;
   protected geoLocation: Geolocation;
 
-  constructor(public geolocation: Geolocation, googleMaps: GoogleMaps) {
+  constructor(public geolocation: Geolocation) {
     this.geoLocation = geolocation;
   }
 
@@ -33,14 +33,7 @@ export class MapPage {
 
     this.geolocation.getCurrentPosition().then((resp) => {
       let ionic: LatLng = new LatLng(resp.coords.latitude, resp.coords.longitude);
-      /*let position: CameraPosition = {
-       target: ionic,
-       zoom: 18,
-       tilt: 30
-       };*/
       this.map.panTo(ionic);
-      // resp.coords.latitude
-      // resp.coords.longitude
     }).catch((error) => {
       console.log("Error getting location", error);
     });
@@ -48,11 +41,6 @@ export class MapPage {
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
       let ionic: LatLng = new LatLng(data.coords.latitude, data.coords.longitude);
-      /*let position: CameraPosition = {
-       target: ionic,
-       zoom: 18,
-       tilt: 30
-       };*/
       this.map.panTo(ionic);
     });
   }

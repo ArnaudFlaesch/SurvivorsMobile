@@ -7,7 +7,7 @@ import { NavController } from "ionic-angular";
 })
 export class HomePage {
 
-  private title: String;
+  public title: String;
 
   constructor(public navCtrl: NavController) {
     this.title = "Survivors - Page d'accueil";
