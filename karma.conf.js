@@ -12,13 +12,13 @@ module.exports = function (config) {
     ],
     files: [
       {pattern: './src/test.ts', watched: false},
-      {pattern: './src/app/!(*spec).ts', watched: true},
-      {pattern: './src/pages/**/!(*spec).ts', watched: true},
+      {pattern: './src/app/!(*spec|*d).ts', watched: true},
+      {pattern: './src/pages/**/!(*spec|*d).ts', watched: true},
     ],
     preprocessors: {
       './src/test.ts': ['@angular/cli'],
-      './src/app/!(*spec).ts': ['typescript', 'coverage'],
-      './src/pages/**/!(*spec).ts': ['typescript', 'coverage']
+      './src/app/!(*spec|*d).ts': ['typescript', 'coverage'],
+      './src/pages/**/!(*spec|*d).ts': ['typescript', 'coverage']
     },
     mime: {
       'text/x-typescript': ['ts','tsx']
@@ -44,7 +44,7 @@ module.exports = function (config) {
     reporters: ['progress', 'coverage', 'typescript'],
     port: 1337,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DISABLE,
     autoWatch: true,
     browsers: ['Firefox'],
     singleRun: true

@@ -5,7 +5,7 @@ import { NavController } from "ionic-angular";
 
 @Component({
   selector: "page-ar",
-  templateUrl: "src/pages/ar/ar.html"
+  templateUrl: "ar.html"
 })
 export class ARPage {
 
