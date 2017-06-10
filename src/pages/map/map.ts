@@ -14,7 +14,10 @@ export class MapPage {
   protected map: any;
   protected geoLocation: Geolocation;
 
+  private title: String;
+
   constructor(public geolocation: Geolocation) {
+    this.title = "Carte";
     this.geoLocation = geolocation;
   }
 
