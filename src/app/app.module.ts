@@ -20,11 +20,14 @@ import {CameraPage} from "../pages/camera/camera";
 import {CameraPreview} from "@ionic-native/camera-preview";
 import {Diagnostic} from "@ionic-native/diagnostic";
 import {ARPage} from "../pages/ar/ar";
+import {InventoryPage} from "../pages/inventory/inventory";
+import {InventoryService} from "../services/InventoryService";
 
 @NgModule({
   declarations: [
     SurvivorsApplication,
     ARPage,
+    InventoryPage,
     LoginPage,
     LogoutPage,
     MapPage,
@@ -40,6 +43,7 @@ import {ARPage} from "../pages/ar/ar";
   entryComponents: [
     SurvivorsApplication,
     ARPage,
+    InventoryPage,
     LoginPage,
     LogoutPage,
     MapPage,
@@ -48,6 +52,7 @@ import {ARPage} from "../pages/ar/ar";
   ],
   providers: [
     AuthService,
+    InventoryService,
     CameraPreview,
     Diagnostic,
     Geolocation,

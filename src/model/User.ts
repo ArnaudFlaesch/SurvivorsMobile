@@ -3,9 +3,18 @@
  */
 
 export class User {
+  private _id: Number;
   private _email: string;
   private _nickname: string;
   private _password: string;
+
+  get id(): Number {
+    return this._id;
+  }
+
+  set id(value: Number)  {
+    this._id = value;
+  }
 
   get email(): string {
     return this._email;

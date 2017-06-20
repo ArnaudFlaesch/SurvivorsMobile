@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Inventaire</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let item of inventory">
+
+    <ion-item>
+      {{item._name}}
+    </ion-item>
+
+    <ion-item-options>
+      <button ion-button icon-only (click)="useItem(item)" light>
+        <ion-icon name="paper"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="deleteItem(item)" danger>
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>

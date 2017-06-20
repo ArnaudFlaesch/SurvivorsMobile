@@ -13,8 +13,10 @@ import {User} from "../../model/User";
 export class LoginPage {
   private loading: Loading;
   private loginCredentials = new User();
+  private userService: AuthService;
 
   constructor(public navCtrl: NavController, private auth: AuthService, public storage: Storage, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+    this.userService = auth;
     storage.ready().then(() => {
       storage.get("nickname").then((val) => {
         console.log("Your nickname is", val);
@@ -37,6 +39,7 @@ export class LoginPage {
     this.auth.login(this.loginCredentials)
       .then(user => {
         if (user.data !== []) {
+          this.userService.setUserInfo(user.data);
           this.storage.set("nickname", user.data._nickname);
           this.storage.set("password", user.data._password);
           setTimeout(() => {

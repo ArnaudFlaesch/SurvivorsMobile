@@ -12,7 +12,7 @@ import "rxjs/add/operator/toPromise";
 @Injectable()
 export class AuthService {
   private currentUser: User;
-  private API_URL = "http://34.250.254.92:3000/user";
+  private API_URL = "http://52.17.200.158:3000/user";
   private headers = new Headers();
 
   constructor(public http: HTTP) {
@@ -31,6 +31,10 @@ export class AuthService {
 
   public getUserInfo(): User {
     return this.currentUser;
+  }
+
+  public setUserInfo(user: User) {
+    this.currentUser = user;
   }
 
   public logout() {

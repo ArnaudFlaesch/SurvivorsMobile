@@ -25,7 +25,7 @@ export class ARPage {
           function(fail) {
             console.log("Failed to load ARchitect World!");
           },
-          "www/assets/3_3dModels_6_3dModelAtGeoLocation/index.html",
+          "www/assets/08_BrowsingPois_3_LimitingRange/index.html",
           ["geo"], <JSON>startupConfiguration
       );
   }
