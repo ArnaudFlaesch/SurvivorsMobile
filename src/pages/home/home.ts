@@ -7,7 +7,8 @@ import {AuthService} from "../../services/AuthService";
 
 @Component({
   selector: "page-home",
-  templateUrl: "home.html"
+  templateUrl: "home.html",
+  providers: [AuthService]
 })
 export class HomePage {
 
