@@ -2,6 +2,7 @@ import {TestBed, ComponentFixture, async } from "@angular/core/testing";
 import {IonicModule, NavController} from "ionic-angular";
 import {SurvivorsApplication} from "../../app/app.component";
 import {HomePage} from "./home";
+import {HTTP} from "@ionic-native/http";
 
 let comp: HomePage;
 let fixture: ComponentFixture<HomePage>;
@@ -12,7 +13,8 @@ describe("Home page tests", () => {
     TestBed.configureTestingModule({
       declarations: [SurvivorsApplication, HomePage],
       providers: [
-        NavController
+        NavController,
+        HTTP
       ],
       imports: [
         IonicModule.forRoot(SurvivorsApplication)
